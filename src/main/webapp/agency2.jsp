@@ -21,21 +21,14 @@
             <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
-            <li><a href="/demo_war_exploded/milktea">Milktea</a></li>
-            <li class="active"><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
+            <li><a href="/demo_war_exploded/coffee2">Coffee</a></li>
+            <li><a href="/demo_war_exploded/milktea2">Milktea</a></li>
+            <li class="active"><a href="/demo_war_exploded/agency2?name=agency2">Agency</a></li>
             <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
         </ul>
-        <form class="navbar-form navbar-right" action="/action_page.php">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search"/>
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
     </div>
 </nav>
 <div class="hero-image">
@@ -49,7 +42,7 @@
         <div class="col-sm-2">
             <h3>List Agencies</h3>
             <ul class="nav nav-pills nav-stacked">
-                <li class=${agency=="agency1" ?"active":""}><a href="agency?name=agency1">Agency 1</a></li>
+                <li class=${agency=="agency2" ?"active":""}><a href="agency2?name=agency2">Agency 2</a></li>
             </ul>
             <hr class="hidden-sm hidden-md hidden-lg"/>
         </div>
@@ -63,7 +56,7 @@
                         <div class="col-sm-6">
                             <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i
                                     class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-                            <a href="/demo_war_exploded/reportSalary" class="btn btn-success" data-toggle="modal"><i
+                            <a href="/demo_war_exploded/reportSalary2" class="btn btn-success" data-toggle="modal"><i
                                     class="material-icons">&#xE147;</i> <span>Report Salary</span></a>
                         </div>
 
@@ -91,9 +84,9 @@
                             <td>${x.pay1h}</td>
                             <td>${x.payOT}</td>
                             <td>
-                                <a href="loadEmployees?agency=${agency}&eid=${x.id}" class="edit" data-toggle="modal"><i
+                                <a href="loadEmployees2?agency=${agency}&eid=${x.id}" class="edit" data-toggle="modal"><i
                                         class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="delete?agency=${agency}&eid=${x.id}" class="delete" data-toggle="modal"><i
+                                <a href="delete2?agency=${agency}&eid=${x.id}" class="delete" data-toggle="modal"><i
                                         class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
                         </tr>
@@ -108,7 +101,7 @@
 <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="add?agency=${agency}" method="post">
+            <form action="add2?agency=${agency}" method="post">
                 <div class="modal-header">
                     <h4 class="modal-title"><b>Add Employee</b></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

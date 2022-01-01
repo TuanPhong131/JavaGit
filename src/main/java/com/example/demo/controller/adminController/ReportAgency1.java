@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(value = "/reportAgency1")
-public class AdminReportAll extends HttpServlet {
+public class ReportAgency1 extends HttpServlet {
     private ReportDAO reportDAO;
     private SalaryDAO salaryDAO;
 

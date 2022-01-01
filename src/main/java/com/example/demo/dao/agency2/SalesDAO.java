@@ -1,4 +1,4 @@
-package com.example.demo.dao.agency1;
+package com.example.demo.dao.agency2;
 
 import com.example.demo.connectDB.ConnectDB;
 import com.example.demo.model.SalesCoffeeModel;
@@ -26,7 +26,7 @@ public class SalesDAO {
 
     public List<SalesCoffeeModel> getAllSales() throws Exception {
         List<SalesCoffeeModel> list = new ArrayList<>();
-        String sql = "SELECT * FROM salesCoffee";
+        String sql = "SELECT * FROM salesCoffee2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
@@ -56,7 +56,7 @@ public class SalesDAO {
                 "SUM(condensedMilk) AS totalCondensedMilk,\n" +
                 "SUM(sugar) AS totalSugar,\n" +
                 "SUM(quantity) AS totalQuantity\n" +
-                "from salesCoffee";
+                "from salesCoffee2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -74,7 +74,7 @@ public class SalesDAO {
     }
     public List<SalesMilkteaModel> getSalesMilktea() throws Exception {
         List<SalesMilkteaModel> list = new ArrayList<>();
-        String sql = "SELECT * FROM salesMilktea";
+        String sql = "SELECT * FROM salesMilktea2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
@@ -100,7 +100,7 @@ public class SalesDAO {
 
     public List<TotalMilkteaModal> getSumTea() throws Exception{
         List<TotalMilkteaModal> list = new ArrayList<>();
-        String sql = "SELECT typeofTea,SUM(mlTea) AS totalTea FROM salesmilktea \n" +
+        String sql = "SELECT typeofTea,SUM(mlTea) AS totalTea FROM salesmilktea2 \n" +
                 "GROUP BY typeofTea";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -116,7 +116,7 @@ public class SalesDAO {
 
     public List<TotalSyrypModal> getSumSyrup() throws Exception{
         List<TotalSyrypModal> list = new ArrayList<>();
-        String sql = "SELECT typeofSyrup,SUM(mlSyrup) AS totalSyrup FROM salesmilktea \n" +
+        String sql = "SELECT typeofSyrup,SUM(mlSyrup) AS totalSyrup FROM salesmilktea2 \n" +
                 "GROUP BY typeofSyrup";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -131,7 +131,7 @@ public class SalesDAO {
     }
 
     public TotalSumModal getSumTotal() throws Exception{
-        String sql = "SELECT SUM(condensedMilk) AS sumMilk,SUM(total) AS sumTotal FROM salesmilktea";
+        String sql = "SELECT SUM(condensedMilk) AS sumMilk,SUM(total) AS sumTotal FROM salesmilktea2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {

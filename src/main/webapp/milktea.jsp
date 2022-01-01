@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="../css/agency.css" rel="stylesheet" type="text/css"/>
+    <link href="css/agency.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body, html {
@@ -83,16 +83,10 @@
             <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
             <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
         </ul>
-        <form class="navbar-form navbar-right" action="searchMilktea" method="get">
-            <div class="input-group">
-                <input name="name" type="text" class="form-control" placeholder="Search here ...">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
+
     </div>
 </nav>
 <div class="hero-image">
@@ -106,13 +100,21 @@
     <div class="col-sm-6">
         <h2>List Of <b>Milk Tea</b></h2>
     </div>
-    <br>
     <div class="col-sm-6">
         <a href="addMilktea.jsp"><i
                 class="material-icons">&#xE147;</i> <span>Add New Item</span></a>
-
         <a href="/demo_war_exploded/salesMilktea"><i
                 class="material-icons">&#xE147;</i> <span>Report Sales</span></a>
+        <form class="navbar-form navbar-right" action="searchMilktea" method="get">
+            <div class="input-group">
+                <input name="name" type="text" class="form-control" placeholder="Search here ...">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 <br>

@@ -1,6 +1,6 @@
 package com.example.demo.controller.coffeeController;
 
-import com.example.demo.dao.CoffeeDAO;
+import com.example.demo.dao.agency1.CoffeeDAO;
 import com.example.demo.model.CoffeeModel;
 
 import javax.servlet.*;

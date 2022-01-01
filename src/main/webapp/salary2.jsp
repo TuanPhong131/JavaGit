@@ -90,7 +90,7 @@
 
     <div class="row">
         <div class="col-md-8">
-            <form action="salary" method="post">
+            <form action="salary2" method="post">
                 <div class="p-3 py-5">
                     <div class="row mt-3">
                         <div class="col-md-6">

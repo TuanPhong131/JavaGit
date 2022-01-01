@@ -1,6 +1,6 @@
 package com.example.demo.controller.milkteaController;
 
-import com.example.demo.dao.agency1.MilkteaDAO;
+import com.example.demo.dao.agency2.MilkteaDAO;
 import com.example.demo.model.MilkteaModel;
 
 import javax.servlet.ServletException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ServletMilkteaUpdate", value = "/updateMilktea")
-public class ServletMilkteaUpdate extends HttpServlet {
+@WebServlet(value = "/updateMilktea2")
+public class ServletMilkteaUpdate2 extends HttpServlet {
     private MilkteaDAO milkteaDAO;
 
     public void init() {
@@ -25,7 +25,7 @@ public class ServletMilkteaUpdate extends HttpServlet {
             String id = request.getParameter("sid");
             MilkteaModel milkteaModel = milkteaDAO.getMilkteaByID(id);
             request.setAttribute("milkteaU", milkteaModel);
-            request.getRequestDispatcher("updateMilktea.jsp").forward(request, response);
+            request.getRequestDispatcher("updateMilktea2.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,7 +47,7 @@ public class ServletMilkteaUpdate extends HttpServlet {
             String mlSyrup = request.getParameter("mlSyrup");
 
             milkteaDAO.updateMilktea(id, code, image, name, size, price, typeofTea, mlTea, condensedMilk, typeofSyrup, mlSyrup);
-            response.sendRedirect("milktea");
+            response.sendRedirect("milktea2");
         } catch (Exception e) {
             e.printStackTrace();
         }

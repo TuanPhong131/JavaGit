@@ -1,9 +1,7 @@
-package com.example.demo.dao.agency1;
+package com.example.demo.dao.agency2;
 
 import com.example.demo.connectDB.ConnectDB;
-import com.example.demo.model.SalesCoffeeModel;
 import com.example.demo.model.SalesModel.*;
-import com.example.demo.model.TotalMilkteaModal.TotalSumModal;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,7 +22,7 @@ public class ReportDAO {
     public List<Tea> getTea() throws Exception {
         List<Tea> list = new ArrayList<>();
         String sql = "SELECT typeofTea,SUM(mlTea) AS totalTea,imgTea,ROUND(15-SUM(mlTea)/500,2) AS remain,\n" +
-                "ROUND(SUM(mlTea)/500,0) AS importNumber FROM salesmilktea\n" +
+                "ROUND(SUM(mlTea)/500,0) AS importNumber FROM salesmilktea2\n" +
                 "GROUP BY typeofTea;";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
@@ -43,7 +41,7 @@ public class ReportDAO {
     public List<Syrup> getSyrup() throws Exception {
         List<Syrup> list = new ArrayList<>();
         String sql = "SELECT typeofSyrup,SUM(mlSyrup) AS totalSyrup,imgSyrup,ROUND(15-SUM(mlSyrup)/750,2) AS remain,\n" +
-                "ROUND(SUM(mlSyrup)/750,0) AS importNumber FROM salesmilktea\n" +
+                "ROUND(SUM(mlSyrup)/750,0) AS importNumber FROM salesmilktea2\n" +
                 "GROUP BY typeofSyrup;";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
@@ -62,7 +60,7 @@ public class ReportDAO {
 
     public Coffee getCoffee() throws Exception{
         String sql = "SELECT SUM(grCoffee) AS sumGrCoffee,imgCoffee,ROUND(10-SUM(grCoffee)/1000,2) AS remain,\n" +
-                "round(SUM(grCoffee)/1000,0) AS importNumber FROM salescoffee;";
+                "round(SUM(grCoffee)/1000,0) AS importNumber FROM salescoffee2;";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -78,7 +76,7 @@ public class ReportDAO {
     }
     public Milk getFreshMilk() throws Exception{
         String sql = "SELECT SUM(freshMilk) AS sumFreshMilk,imgFreshMilk,ROUND(25-SUM(freshMilk)/450,2) AS remain,\n" +
-                "round(SUM(freshMilk)/450,0) AS importNumber FROM salescoffee;";
+                "round(SUM(freshMilk)/450,0) AS importNumber FROM salescoffee2;";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -94,7 +92,7 @@ public class ReportDAO {
     }
     public Sugar getSugar() throws Exception{
         String sql = "SELECT SUM(sugar) AS sumSugar,imgSugar,ROUND(15-SUM(sugar)/750,2) AS remain,\n" +
-                "round(SUM(sugar)/750,0) AS importNumber FROM salescoffee;";
+                "round(SUM(sugar)/750,0) AS importNumber FROM salescoffee2;";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -110,7 +108,7 @@ public class ReportDAO {
     }
     public CondensedMilk getCondensedMilk() throws Exception{
         String sql = "SELECT sum(condensedMilk) AS totalMilk,imgMilk,ROUND(10-sum(condensedMilk)/900,2) AS remain,\n" +
-                "round(sum(condensedMilk)/900,0) AS importNumber FROM salesmilktea;";
+                "round(sum(condensedMilk)/900,0) AS importNumber FROM salesmilktea2;";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -125,7 +123,7 @@ public class ReportDAO {
         return null;
     }
     public Money getMoneyCoffee() throws Exception{
-        String sql = "SELECT SUM(total) AS total,imgMoney FROM salescoffee";
+        String sql = "SELECT SUM(total) AS total,imgMoney FROM salescoffee2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -139,7 +137,7 @@ public class ReportDAO {
     }
 
     public Money getMoneyTea() throws Exception{
-        String sql = "SELECT SUM(total) AS total, imgMoney FROM salesmilktea";
+        String sql = "SELECT SUM(total) AS total, imgMoney FROM salesmilktea2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {

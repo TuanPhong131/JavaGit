@@ -77,12 +77,14 @@
             <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
-            <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
-            <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
-            <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
+            <li><a href="/demo_war_exploded/coffee2">Coffee</a></li>
+            <li><a href="/demo_war_exploded/milktea2">Milk Tea</a></li>
+            <li><a href="/demo_war_exploded/agency2?name=agency2">Agency</a></li>
+            <li><a href="/demo_war_exploded/total2">Total Report Daily</a></li>
         </ul>
-
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
     </div>
 </nav>
 <div class="hero-image">
@@ -111,7 +113,7 @@
             <th>REPORT</th>
         </tr>
         </thead>
-        <form action="/salesMilktea" method="get">
+        <form action="/salesMilktea2" method="get">
             <tbody>
             <c:forEach var="x" items="${listMilktea}">
                 <tr>
@@ -129,7 +131,7 @@
                     <td>${x.quantity}</td>
                     <td>${x.total}</td>
                     <td>
-                        <a href="modalMilktea?sid=${x.id}">
+                        <a href="modalMilktea2?sid=${x.id}">
                             Add
                         </a>
                     </td>
@@ -151,7 +153,7 @@
                     <th>Amount(ML)</th>
                 </tr>
                 </thead>
-                <form action="/salesMilktea" method="get">
+                <form action="/salesMilktea2" method="get">
                     <tbody>
                     <c:forEach var="x" items="${getSumTea}">
                         <tr>
@@ -171,7 +173,7 @@
                     <th>Amount(ML)</th>
                 </tr>
                 </thead>
-                <form action="/salesMilktea" method="get">
+                <form action="/salesMilktea2" method="get">
                     <tbody>
                     <c:forEach var="x" items="${getSumSyrup}">
                         <tr>
@@ -193,7 +195,7 @@
                     <th>Total Condensed Milk</th>
                 </tr>
                 </thead>
-                <form action="/salesMilktea" method="get">
+                <form action="/salesMilktea2" method="get">
                     <tbody>
                     <tr>
                         <td>${getSumTotal.sumMilk}</td>
@@ -209,7 +211,7 @@
                     <th>Total Sales</th>
                 </tr>
                 </thead>
-                <form action="/salesMilktea" method="get">
+                <form action="/salesMilktea2" method="get">
                     <tbody>
                     <tr>
                         <td>${getSumTotal.sumTotal}</td>

@@ -84,11 +84,14 @@
             <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
-            <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
-            <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
-            <li class="active"><a href="/demo_war_exploded/total">Total Report Daily</a></li>
+            <li><a href="/demo_war_exploded/coffee2">Coffee</a></li>
+            <li><a href="/demo_war_exploded/milktea2">Milk Tea</a></li>
+            <li><a href="/demo_war_exploded/agency2?name=agency2">Agency</a></li>
+            <li class="active"><a href="/demo_war_exploded/total2">Total Report Daily</a></li>
         </ul>
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
     </div>
 </nav>
 <div class="hero-image">
@@ -98,7 +101,7 @@
     </div>
 </div>
 <br>
-<form action="/total" method="get">
+<form action="/total2" method="get">
     <div class="container">
         <p class="fw-bolder" style="font-size:30px"><b>REPORT DAILY</b></p>
         <p class="fw-bolder" style="font-size:20px"><b>SALES: <i>${moneyCoffee.total + moneyTea.total}(VND)</i></b></p>

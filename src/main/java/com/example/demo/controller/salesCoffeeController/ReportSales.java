@@ -1,6 +1,6 @@
 package com.example.demo.controller.salesCoffeeController;
 
-import com.example.demo.dao.SalesDAO;
+import com.example.demo.dao.agency1.SalesDAO;
 import com.example.demo.model.SalesCoffeeModel;
 import com.example.demo.model.TotalCoffeeModal;
 
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Sales", value = "/salesCoffee")
+@WebServlet( value = "/salesCoffee")
 public class ReportSales extends HttpServlet {
     private SalesDAO salesDAO;
 

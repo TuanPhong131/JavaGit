@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package com.example.demo.dao.login;
 
 import com.example.demo.connectDB.ConnectDB;
 import com.example.demo.model.LoginModel;

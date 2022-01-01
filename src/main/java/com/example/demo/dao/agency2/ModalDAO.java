@@ -1,4 +1,4 @@
-package com.example.demo.dao.agency1;
+package com.example.demo.dao.agency2;
 
 import com.example.demo.connectDB.ConnectDB;
 import com.example.demo.model.ModalCoffeeModel;
@@ -20,7 +20,7 @@ public class ModalDAO {
     }
 
     public ModalCoffeeModel getModalById(String id) throws Exception {
-        String sql = "SELECT id,name,price,grCoffee,freshMilk,condensedMilk,sugar,quantity FROM salesCoffee WHERE id=?";
+        String sql = "SELECT id,name,price,grCoffee,freshMilk,condensedMilk,sugar,quantity FROM salesCoffee2 WHERE id=?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -42,7 +42,7 @@ public class ModalDAO {
     }
 
     public ModalMilkteaModel getModalMilkteaById(String id) throws Exception {
-        String sql = "SELECT id,name,price,typeofTea,mlTea,condensedMilk,typeofSyrup,mlSyrup,quantity FROM salesMilktea WHERE id=?";
+        String sql = "SELECT id,name,price,typeofTea,mlTea,condensedMilk,typeofSyrup,mlSyrup,quantity FROM salesMilktea2 WHERE id=?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -65,7 +65,7 @@ public class ModalDAO {
     }
 
     public void updateModal(String id, String quantity) throws Exception {
-        String sql = "UPDATE salesCoffee SET quantity = ?,\n" +
+        String sql = "UPDATE salesCoffee2 SET quantity = ?,\n" +
                 "grCoffee = grCoffee/quantityNew * quantity,\n" +
                 "freshMilk = freshMilk/quantityNew *quantity,\n" +
                 "condensedMilk=condensedMilk/quantityNew*quantity,\n" +
@@ -81,7 +81,7 @@ public class ModalDAO {
         }
     }
     public void updateMilkteaModal(String id, String quantity) throws Exception {
-        String sql = "UPDATE salesMilktea SET quantity = ?,\n" +
+        String sql = "UPDATE salesMilktea2 SET quantity = ?,\n" +
                 "mlTea = mlTea/quantityNew * quantity,\n" +
                 "condensedMilk=condensedMilk/quantityNew*quantity,\n" +
                 "mlSyrup=mlSyrup/quantityNew*quantity,\n" +

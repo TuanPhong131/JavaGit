@@ -1,15 +1,17 @@
 package com.example.demo.controller.employee;
 
-import com.example.demo.dao.agency1.AgencyDAO;
+import com.example.demo.dao.employee.AgencyDAO;
 import com.example.demo.model.EmployeeModel;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "LoadEmployees", value = "/loadEmployees")
-public class LoadEmployeesServlet extends HttpServlet {
+@WebServlet(value = "/loadEmployees2")
+public class LoadEmployeesServlet2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -19,7 +21,7 @@ public class LoadEmployeesServlet extends HttpServlet {
         EmployeeModel employeeModel = agencyDAO.getEmployeeById(agency, eid);
         request.setAttribute("employee", employeeModel);
         request.setAttribute("agency", agency);
-        request.getRequestDispatcher("edit_employee.jsp").forward(request, response);
+        request.getRequestDispatcher("edit_employee2.jsp").forward(request, response);
 
     }
 

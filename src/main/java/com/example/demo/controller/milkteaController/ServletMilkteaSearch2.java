@@ -1,6 +1,6 @@
 package com.example.demo.controller.milkteaController;
 
-import com.example.demo.dao.agency1.MilkteaDAO;
+import com.example.demo.dao.agency2.MilkteaDAO;
 import com.example.demo.model.MilkteaModel;
 
 import javax.servlet.ServletException;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ServletMilkteaSearch", value = "/searchMilktea")
-public class ServletMilkteaSearch extends HttpServlet {
+@WebServlet(value = "/searchMilktea2")
+public class ServletMilkteaSearch2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -21,7 +21,7 @@ public class ServletMilkteaSearch extends HttpServlet {
             MilkteaDAO milkteaDAO = new MilkteaDAO();
             List<MilkteaModel> search = milkteaDAO.search(name);
             request.setAttribute("searchMilktea", search);
-            request.getRequestDispatcher("milktea.jsp").forward(request, response);
+            request.getRequestDispatcher("milktea2.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

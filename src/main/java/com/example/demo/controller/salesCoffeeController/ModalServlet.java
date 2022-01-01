@@ -1,6 +1,6 @@
 package com.example.demo.controller.salesCoffeeController;
 
-import com.example.demo.dao.ModalDAO;
+import com.example.demo.dao.agency1.ModalDAO;
 import com.example.demo.model.ModalCoffeeModel;
 
 import javax.servlet.ServletException;

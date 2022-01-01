@@ -1,6 +1,6 @@
 package com.example.demo.controller.salesMilkteaController;
 
-import com.example.demo.dao.agency1.ModalDAO;
+import com.example.demo.dao.agency2.ModalDAO;
 import com.example.demo.model.ModalMilkteaModel;
 
 import javax.servlet.ServletException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(value = "/modalMilktea")
-public class ModalServlet extends HttpServlet {
+@WebServlet(value = "/modalMilktea2")
+public class ModalServlet2 extends HttpServlet {
     private ModalDAO modalDAO;
 
     public void init() {
@@ -24,7 +24,7 @@ public class ModalServlet extends HttpServlet {
             String id = req.getParameter("sid");
             ModalMilkteaModel modalModel = modalDAO.getModalMilkteaById(id);
             req.setAttribute("modalMilktea", modalModel);
-            req.getRequestDispatcher("modalMilktea.jsp").forward(req, resp);
+            req.getRequestDispatcher("modalMilktea2.jsp").forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -36,7 +36,7 @@ public class ModalServlet extends HttpServlet {
             String id = req.getParameter("id");
             String quantity = req.getParameter("quantity");
             modalDAO.updateMilkteaModal(id, quantity);
-            resp.sendRedirect("salesMilktea");
+            resp.sendRedirect("salesMilktea2");
         } catch (Exception e) {
             e.printStackTrace();
         }

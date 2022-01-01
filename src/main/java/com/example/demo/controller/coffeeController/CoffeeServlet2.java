@@ -1,16 +1,18 @@
 package com.example.demo.controller.coffeeController;
 
-import com.example.demo.dao.agency1.CoffeeDAO;
+import com.example.demo.dao.agency2.CoffeeDAO;
 import com.example.demo.model.CoffeeModel;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Coffee", value = "/coffee")
-public class CoffeeServlet extends HttpServlet {
+@WebServlet(value = "/coffee2")
+public class CoffeeServlet2 extends HttpServlet {
     private CoffeeDAO coffeeDAO;
 
     public void init() {
@@ -22,7 +24,7 @@ public class CoffeeServlet extends HttpServlet {
         try {
             List<CoffeeModel> list = coffeeDAO.getAllCoffee();
             request.setAttribute("listCoffee", list);
-            request.getRequestDispatcher("coffee.jsp").forward(request, response);
+            request.getRequestDispatcher("coffee2.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,7 +44,7 @@ public class CoffeeServlet extends HttpServlet {
             String sugar = request.getParameter("sugar");
 
             coffeeDAO.addCoffee(code,image,name,size,price,grCoffee,freshMilk,condensedMilk,sugar);
-            response.sendRedirect("coffee");
+            response.sendRedirect("coffee2");
         } catch (Exception e) {
             e.printStackTrace();
         }

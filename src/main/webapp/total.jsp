@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="../css/agency.css" rel="stylesheet" type="text/css"/>
+    <link href="css/agency.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body, html {
@@ -89,6 +89,9 @@
             <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
             <li class="active"><a href="/demo_war_exploded/total">Total Report Daily</a></li>
         </ul>
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
     </div>
 </nav>
 <div class="hero-image">

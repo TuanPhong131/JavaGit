@@ -34,7 +34,7 @@
     <div id="editEmployeeModal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="edit?agency=${agency}" method="post">
+                <form action="edit2?agency=${agency}" method="post">
                     <div class="modal-header">
                         <h4 class="modal-title"><b>Edit Employee</b></h4>
                         <button onclick="goBack()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

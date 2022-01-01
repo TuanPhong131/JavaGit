@@ -1,15 +1,17 @@
 package com.example.demo.controller.coffeeController;
 
-import com.example.demo.dao.agency1.CoffeeDAO;
+import com.example.demo.dao.agency2.CoffeeDAO;
 import com.example.demo.model.CoffeeModel;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ServletCoffeeUpdate", value = "/updateCoffee")
-public class ServletCoffeeUpdate extends HttpServlet {
+@WebServlet(value = "/updateCoffee2")
+public class ServletCoffeeUpdate2 extends HttpServlet {
     private CoffeeDAO coffeeDAO;
 
     public void init() {
@@ -22,7 +24,7 @@ public class ServletCoffeeUpdate extends HttpServlet {
             String id = request.getParameter("sid");
             CoffeeModel coffeeModel = coffeeDAO.getCoffeeByID(id);
             request.setAttribute("coffeeU", coffeeModel);
-            request.getRequestDispatcher("updateCoffee.jsp").forward(request, response);
+            request.getRequestDispatcher("updateCoffee2.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,7 +44,7 @@ public class ServletCoffeeUpdate extends HttpServlet {
             String condensedMilk = request.getParameter("condensedMilk");
             String sugar = request.getParameter("sugar");
             coffeeDAO.updateCoffee(id, code, image, name, size, price, grCoffee, freshMilk, condensedMilk, sugar);
-            response.sendRedirect("coffee");
+            response.sendRedirect("coffee2");
         } catch (Exception e) {
             e.printStackTrace();
         }

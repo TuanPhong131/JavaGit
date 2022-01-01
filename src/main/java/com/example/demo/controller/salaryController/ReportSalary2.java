@@ -1,6 +1,6 @@
 package com.example.demo.controller.salaryController;
 
-import com.example.demo.dao.agency1.SalaryDAO;
+import com.example.demo.dao.agency2.SalaryDAO;
 import com.example.demo.model.SalaryModel;
 import com.example.demo.model.TotalSalaryModal;
 
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Sales", value = "/reportSalary")
-public class ReportSalary extends HttpServlet {
+@WebServlet(value = "/reportSalary2")
+public class ReportSalary2 extends HttpServlet {
     private SalaryDAO salaryDAO;
 
     public void init() {
@@ -27,7 +27,7 @@ public class ReportSalary extends HttpServlet {
             request.setAttribute("list", list);
             TotalSalaryModal totalSalaryModal = salaryDAO.getSum();
             request.setAttribute("sum",totalSalaryModal);
-            request.getRequestDispatcher("reportSalary.jsp").forward(request, response);
+            request.getRequestDispatcher("reportSalary2.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

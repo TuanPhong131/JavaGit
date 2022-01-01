@@ -1,4 +1,4 @@
-package com.example.demo.dao.agency1;
+package com.example.demo.dao.agency2;
 
 
 import com.example.demo.connectDB.ConnectDB;
@@ -7,8 +7,6 @@ import com.example.demo.model.CoffeeModel;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.sql.DriverManager.getConnection;
 
 public class CoffeeDAO {
 
@@ -25,7 +23,7 @@ public class CoffeeDAO {
 
     public List<CoffeeModel> getAllCoffee() throws Exception {
         List<CoffeeModel> list = new ArrayList<>();
-        String sql = "SELECT * FROM coffee";
+        String sql = "SELECT * FROM coffee2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
@@ -47,7 +45,7 @@ public class CoffeeDAO {
     }
 
     public void deleteCoffee(String id) throws Exception {
-        String sql = "DELETE FROM coffee WHERE id = ?";
+        String sql = "DELETE FROM coffee2 WHERE id = ?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -57,7 +55,7 @@ public class CoffeeDAO {
 
     public List<CoffeeModel> search(String name) throws Exception {
         List<CoffeeModel> list = new ArrayList<>();
-        String sql = "SELECT * FROM coffee WHERE name LIKE ?";
+        String sql = "SELECT * FROM coffee2 WHERE name LIKE ?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, "%" + name + "%");
@@ -81,7 +79,7 @@ public class CoffeeDAO {
     }
 
     public CoffeeModel getCoffeeByID(String id) throws Exception {
-        String sql = "SELECT * FROM coffee WHERE id = ?";
+        String sql = "SELECT * FROM coffee2 WHERE id = ?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -105,7 +103,7 @@ public class CoffeeDAO {
     }
 
     public void updateCoffee(String id, String code, String image, String name, String size, String price, String grCoffee, String freshMilk, String condensedMilk, String sugar) throws Exception {
-        String sql = "UPDATE coffee SET code=?, image=?,name=?,size=?,price=?,grCoffee=?,freshMilk=?,condensedMilk=?,sugar=? WHERE id=?";
+        String sql = "UPDATE coffee2 SET code=?, image=?,name=?,size=?,price=?,grCoffee=?,freshMilk=?,condensedMilk=?,sugar=? WHERE id=?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, code);
@@ -123,7 +121,7 @@ public class CoffeeDAO {
     }
 
     public void addCoffee(String code, String image, String name, String size, String price, String grCoffee, String freshMilk, String condensedMilk, String sugar) throws Exception {
-        String sql="INSERT INTO coffee(CODE,image,NAME,size,price,grCoffee,freshMilk,condensedMilk,sugar) VALUES(?,?,?,?,?,?,?,?,?)";
+        String sql="INSERT INTO coffee2(CODE,image,NAME,size,price,grCoffee,freshMilk,condensedMilk,sugar) VALUES(?,?,?,?,?,?,?,?,?)";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, code);

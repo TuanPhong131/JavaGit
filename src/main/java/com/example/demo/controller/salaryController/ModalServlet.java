@@ -1,7 +1,7 @@
-package com.example.demo.controller.salesCoffeeController;
+package com.example.demo.controller.salaryController;
 
-import com.example.demo.dao.ModalDAO;
-import com.example.demo.model.ModalCoffeeModel;
+import com.example.demo.dao.agency1.SalaryDAO;
+import com.example.demo.model.SalaryModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(value = "/modalCoffee")
+@WebServlet(value = "/salary")
 public class ModalServlet extends HttpServlet {
-    private ModalDAO modalDAO;
+    private SalaryDAO salaryDAO;
 
     public void init() {
-        modalDAO = new ModalDAO();
+        salaryDAO = new SalaryDAO();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             String id = req.getParameter("sid");
-            ModalCoffeeModel modalModel = modalDAO.getModalById(id);
-            req.setAttribute("modal", modalModel);
-            req.getRequestDispatcher("modalCoffee.jsp").forward(req, resp);
+            SalaryModel salaryModel = salaryDAO.getByID(id);
+            req.setAttribute("modal", salaryModel);
+            req.getRequestDispatcher("salary.jsp").forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -34,9 +34,10 @@ public class ModalServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             String id = req.getParameter("id");
-            String quantity = req.getParameter("quantity");
-            modalDAO.updateModal(id, quantity);
-            resp.sendRedirect("salesCoffee");
+            String workingHours = req.getParameter("workingHours");
+            String hoursOT = req.getParameter("hoursOT");
+            salaryDAO.updateSalaryModal(id, workingHours,hoursOT);
+            resp.sendRedirect("reportSalary");
         } catch (Exception e) {
             e.printStackTrace();
         }

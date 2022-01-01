@@ -1,4 +1,4 @@
-package com.example.demo.dao.agency1;
+package com.example.demo.dao.employee;
 
 import com.example.demo.connectDB.ConnectDB;
 import com.example.demo.model.EmployeeModel;

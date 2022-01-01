@@ -1,7 +1,6 @@
 package com.example.demo.controller.milkteaController;
 
-import com.example.demo.dao.MilkteaDAO;
-import com.example.demo.model.CoffeeModel;
+import com.example.demo.dao.agency1.MilkteaDAO;
 import com.example.demo.model.MilkteaModel;
 
 import javax.servlet.ServletException;

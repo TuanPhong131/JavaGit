@@ -1,9 +1,7 @@
-package com.example.demo.dao.agency1;
+package com.example.demo.dao.agency2;
 
 import com.example.demo.connectDB.ConnectDB;
-import com.example.demo.model.CoffeeModel;
 import com.example.demo.model.SalaryModel;
-import com.example.demo.model.TotalMilkteaModal.TotalSumModal;
 import com.example.demo.model.TotalSalaryModal;
 
 import java.sql.*;
@@ -24,7 +22,7 @@ public class SalaryDAO {
 
     public List<SalaryModel> getAll() throws Exception {
         List<SalaryModel> list = new ArrayList<>();
-        String sql = "SELECT * FROM agency1";
+        String sql = "SELECT * FROM agency2";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
@@ -45,7 +43,7 @@ public class SalaryDAO {
     }
 
     public SalaryModel getByID(String id) throws Exception {
-        String sql = "SELECT * FROM agency1 WHERE id = ?";
+        String sql = "SELECT * FROM agency2 WHERE id = ?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -67,7 +65,7 @@ public class SalaryDAO {
         return null;
     }
     public void updateSalaryModal(String id, String workingHours,String hoursOT) throws Exception {
-        String sql = "UPDATE agency1 SET workingHours = ?,\n" +
+        String sql = "UPDATE agency2 SET workingHours = ?,\n" +
                 "hoursOT=?,\n" +
                 "salary = workingHours*pay1h + hoursOT*payOT\n" +
                 "WHERE id=?;";
@@ -81,7 +79,7 @@ public class SalaryDAO {
     }
 
     public TotalSalaryModal getSum() throws Exception{
-        String sql = "SELECT SUM(workingHours) AS totalWH, SUM(hoursOT) AS totalOT,SUM(salary) AS total FROM agency1;";
+        String sql = "SELECT SUM(workingHours) AS totalWH, SUM(hoursOT) AS totalOT,SUM(salary) AS total FROM agency2;";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             try (ResultSet resultSet = statement.executeQuery()) {

@@ -1,6 +1,6 @@
 package com.example.demo.controller.salesMilkteaController;
 
-import com.example.demo.dao.agency1.SalesDAO;
+import com.example.demo.dao.agency2.SalesDAO;
 import com.example.demo.model.SalesMilkteaModel;
 import com.example.demo.model.TotalMilkteaModal.TotalMilkteaModal;
 import com.example.demo.model.TotalMilkteaModal.TotalSumModal;
@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SalesMilktea", value = "/salesMilktea")
-public class ReportSalesMilktea extends HttpServlet {
+@WebServlet(value = "/salesMilktea2")
+public class ReportSalesMilktea2 extends HttpServlet {
     private SalesDAO salesDAO;
 
     public void init() {
@@ -33,7 +33,7 @@ public class ReportSalesMilktea extends HttpServlet {
             request.setAttribute("getSumSyrup",getSumSyrup);
             TotalSumModal getSumTotal = salesDAO.getSumTotal();
             request.setAttribute("getSumTotal",getSumTotal);
-            request.getRequestDispatcher("salesMilktea.jsp").forward(request, response);
+            request.getRequestDispatcher("salesMilktea2.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

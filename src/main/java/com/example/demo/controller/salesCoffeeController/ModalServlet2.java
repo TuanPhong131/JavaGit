@@ -1,6 +1,6 @@
 package com.example.demo.controller.salesCoffeeController;
 
-import com.example.demo.dao.agency1.ModalDAO;
+import com.example.demo.dao.agency2.ModalDAO;
 import com.example.demo.model.ModalCoffeeModel;
 
 import javax.servlet.ServletException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(value = "/modalCoffee")
-public class ModalServlet extends HttpServlet {
+@WebServlet(value = "/modalCoffee2")
+public class ModalServlet2 extends HttpServlet {
     private ModalDAO modalDAO;
 
     public void init() {
@@ -24,7 +24,7 @@ public class ModalServlet extends HttpServlet {
             String id = req.getParameter("sid");
             ModalCoffeeModel modalModel = modalDAO.getModalById(id);
             req.setAttribute("modal", modalModel);
-            req.getRequestDispatcher("modalCoffee.jsp").forward(req, resp);
+            req.getRequestDispatcher("modalCoffee2.jsp").forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -36,7 +36,7 @@ public class ModalServlet extends HttpServlet {
             String id = req.getParameter("id");
             String quantity = req.getParameter("quantity");
             modalDAO.updateModal(id, quantity);
-            resp.sendRedirect("salesCoffee");
+            resp.sendRedirect("salesCoffee2");
         } catch (Exception e) {
             e.printStackTrace();
         }

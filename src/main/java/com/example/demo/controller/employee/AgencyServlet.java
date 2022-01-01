@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.example.demo.controller.employee;
 
-import com.example.demo.dao.AgencyDAO;
+import com.example.demo.dao.employee.AgencyDAO;
 import com.example.demo.model.EmployeeModel;
 
 import javax.servlet.*;

@@ -78,6 +78,25 @@
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/demo_war_exploded/adminCoffee">Menu Coffee Agency 1</a></li>
+            <li><a href="/demo_war_exploded/adminCoffee2">Menu Coffee Agency 2</a></li>
+            <li><a href="/demo_war_exploded/adminMilktea">Menu Milk Tea Agency 1</a></li>
+            <li><a href="/demo_war_exploded/adminMilktea2">Menu Milk Tea Agency 2</a></li>
+            <li><a href="/demo_war_exploded/adminEmployee?name=agency1">Employee</a></li>
+            <li class="active"><a href="/demo_war_exploded/reportAgency1">Report Of Agency 1</a></li>
+            <li><a href="/demo_war_exploded/reportAgency2">Report Of Agency 2</a></li>
+        </ul>
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
+    </div>
+</nav>
 <div class="hero-image">
     <div class="hero-text">
         <h1 style="font-size:50px">The Happy Garden</h1>
@@ -85,9 +104,9 @@
     </div>
 </div>
 <br>
-<form action="/total" method="get">
+<form action="/reportAgency1" method="get">
     <div class="container">
-        <p class="fw-bolder" style="font-size:30px"><b>REPORT DAILY</b></p>
+        <p class="fw-bolder" style="font-size:30px"><b>AGENCY 1: REPORT DAILY</b></p>
         <p class="fw-bolder" style="font-size:20px"><b>SALES: <i>${moneyCoffee.total + moneyTea.total}(VND)</i></b></p>
         <div class="container">
             <div class="col-md-6">

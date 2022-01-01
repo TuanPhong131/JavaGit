@@ -1,15 +1,17 @@
-package com.example.demo.controller.employee;
+package com.example.demo.controller.adminController;
 
-import com.example.demo.dao.AgencyDAO;
+import com.example.demo.dao.employee.AgencyDAO;
 import com.example.demo.model.EmployeeModel;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Agency", value = "/agency")
+@WebServlet(value = "/adminEmployee")
 public class AgencyServlet extends HttpServlet {
     private AgencyDAO agencyDAO;
 
@@ -25,7 +27,7 @@ public class AgencyServlet extends HttpServlet {
             List<EmployeeModel> list = agencyDAO.getAllAgency(name);
             request.setAttribute("agency", name);
             request.setAttribute("listAgency", list);
-            request.getRequestDispatcher("agency.jsp").forward(request, response);
+            request.getRequestDispatcher("adminEmployee.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

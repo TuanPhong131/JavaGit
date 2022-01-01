@@ -77,12 +77,14 @@
             <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
-            <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
-            <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
-            <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
+            <li><a href="/demo_war_exploded/coffee2">Coffee</a></li>
+            <li><a href="/demo_war_exploded/milktea2">Milk Tea</a></li>
+            <li><a href="/demo_war_exploded/agency2?name=agency2">Agency</a></li>
+            <li><a href="/demo_war_exploded/total2">Total Report Daily</a></li>
         </ul>
-
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
     </div>
 </nav>
 <div class="hero-image">
@@ -111,7 +113,7 @@
             <th>REPORT</th>
         </tr>
         </thead>
-        <form action="/salesCoffee" method="get">
+        <form action="/salesCoffee2" method="get">
             <tbody>
             <c:forEach var="x" items="${listCoffee}">
                 <tr>
@@ -128,7 +130,7 @@
                     <td>${x.quantity}</td>
                     <td>${x.total}</td>
                     <td>
-                        <a href="modalCoffee?sid=${x.id}">
+                        <a href="modalCoffee2?sid=${x.id}">
                             Add
                         </a>
                     </td>
@@ -152,7 +154,7 @@
             <th>QUANTITY</th>
         </tr>
         </thead>
-        <form action="/salesCoffee" method="get">
+        <form action="/salesCoffee2" method="get">
             <tbody>
             <tr>
                 <td>${sum.totalSum}</td>

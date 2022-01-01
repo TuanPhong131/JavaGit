@@ -1,6 +1,6 @@
 package com.example.demo.controller.adminController;
 
-import com.example.demo.dao.agency1.MilkteaDAO;
+import com.example.demo.dao.agency2.MilkteaDAO;
 import com.example.demo.model.MilkteaModel;
 
 import javax.servlet.ServletException;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(value = "/adminMilktea")
-public class MilkteaServlet extends HttpServlet {
+@WebServlet(value = "/adminMilktea2")
+public class MilkteaServlet2 extends HttpServlet {
     private MilkteaDAO milkteaDAO;
 
     @Override
@@ -25,7 +25,7 @@ public class MilkteaServlet extends HttpServlet {
         try {
             List<MilkteaModel> list = milkteaDAO.getAllMilktea();
             request.setAttribute("listMilktea", list);
-            request.getRequestDispatcher("adminMilktea.jsp").forward(request, response);
+            request.getRequestDispatcher("adminMilktea2.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

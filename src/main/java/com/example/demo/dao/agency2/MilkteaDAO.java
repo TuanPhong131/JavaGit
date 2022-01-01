@@ -1,7 +1,6 @@
-package com.example.demo.dao.agency1;
+package com.example.demo.dao.agency2;
 
 import com.example.demo.connectDB.ConnectDB;
-import com.example.demo.model.CoffeeModel;
 import com.example.demo.model.MilkteaModel;
 
 import java.sql.*;
@@ -22,7 +21,7 @@ public class MilkteaDAO extends ConnectDB {
 
     public List<MilkteaModel> getAllMilktea() throws Exception {
         List<MilkteaModel> list = new ArrayList<>();
-        String sql = "SELECT * FROM milktea";
+        String sql = "SELECT * FROM milktea2";
         try (
                 Connection connection = getConnection();
                 PreparedStatement statement = connection.prepareStatement(sql);
@@ -44,7 +43,7 @@ public class MilkteaDAO extends ConnectDB {
         return list;
     }
     public void deleteMilktea(String id) throws Exception {
-        String sql = "DELETE FROM milktea WHERE id = ?";
+        String sql = "DELETE FROM milktea2 WHERE id = ?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -53,7 +52,7 @@ public class MilkteaDAO extends ConnectDB {
     }
     public List<MilkteaModel> search(String name) throws Exception {
         List<MilkteaModel> list = new ArrayList<>();
-        String sql = "SELECT * FROM milktea WHERE name LIKE ?";
+        String sql = "SELECT * FROM milktea2 WHERE name LIKE ?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, "%" + name + "%");
@@ -77,7 +76,7 @@ public class MilkteaDAO extends ConnectDB {
         return list;
     }
     public MilkteaModel getMilkteaByID(String id) throws Exception {
-        String sql = "SELECT * FROM milktea WHERE id = ?";
+        String sql = "SELECT * FROM milktea2 WHERE id = ?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, id);
@@ -101,7 +100,7 @@ public class MilkteaDAO extends ConnectDB {
         return null;
     }
     public void updateMilktea(String id, String code, String image, String name, String size, String price, String typeofTea, String mlTea, String condensedMilk, String typeofSyrup, String mlSyrup) throws Exception {
-        String sql = "UPDATE milktea SET code=?, image=?,name=?,size=?,price=?,typeofTea=?,mlTea=?,condensedMilk=?,typeofSyrup=?,mlSyrup=? WHERE id=?";
+        String sql = "UPDATE milktea2 SET code=?, image=?,name=?,size=?,price=?,typeofTea=?,mlTea=?,condensedMilk=?,typeofSyrup=?,mlSyrup=? WHERE id=?";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, code);
@@ -120,7 +119,7 @@ public class MilkteaDAO extends ConnectDB {
     }
 
     public void addMilktea(String code, String image, String name, String size, String price, String typeofTea, String mlTea, String condensedMilk, String typeofSyrup, String mlSyrup) throws Exception {
-        String sql="INSERT INTO milktea(CODE,image,NAME,size,price,typeofTea,mlTea,condensedMilk,typeofSyrup,mlSyrup) VALUES(?,?,?,?,?,?,?,?,?,?)";
+        String sql="INSERT INTO milktea2(CODE,image,NAME,size,price,typeofTea,mlTea,condensedMilk,typeofSyrup,mlSyrup) VALUES(?,?,?,?,?,?,?,?,?,?)";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, code);

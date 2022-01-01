@@ -78,11 +78,17 @@
             <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/demo_war_exploded/adminCoffee">Coffee</a></li>
-            <li class="active"><a href="/demo_war_exploded/adminMilktea">Milktea</a></li>
-            <li><a href="/demo_war_exploded/adminEmployee?name=agency1">Agency</a></li>
+            <li><a href="/demo_war_exploded/adminCoffee">Menu Coffee Agency 1</a></li>
+            <li><a href="/demo_war_exploded/adminCoffee2">Menu Coffee Agency 2</a></li>
+            <li><a href="/demo_war_exploded/adminMilktea">Menu Milk Tea Agency 1</a></li>
+            <li class="active"><a href="/demo_war_exploded/adminMilktea2">Menu Milk Tea Agency 2</a></li>
+            <li><a href="/demo_war_exploded/adminEmployee?name=agency1">Employee</a></li>
             <li><a href="/demo_war_exploded/reportAgency1">Report Of Agency 1</a></li>
+            <li><a href="/demo_war_exploded/reportAgency2">Report Of Agency 2</a></li>
         </ul>
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
     </div>
 </nav>
 <div class="hero-image">
@@ -94,7 +100,7 @@
 <br>
 <div class="container-fluid" style="margin-left: 50px">
     <div class="col-sm-6">
-        <h2>List Of <b>Milk Tea</b></h2>
+        <h2><b>AGENCY 2</b> List Of Milk Tea </h2>
     </div>
     <br>
 </div>
@@ -115,7 +121,7 @@
             <th>AMOUNT OF SYRUP (ML)</th>
         </tr>
         </thead>
-        <form action="/adminMilktea" method="get">
+        <form action="/adminMilktea2" method="get">
             <tbody>
             <c:forEach var="x" items="${listMilktea}">
                 <tr>

@@ -87,11 +87,14 @@
             <li><a href="/demo_war_exploded/adminCoffee">Menu Coffee Agency 1</a></li>
             <li><a href="/demo_war_exploded/adminCoffee2">Menu Coffee Agency 2</a></li>
             <li><a href="/demo_war_exploded/adminMilktea">Menu Milk Tea Agency 1</a></li>
-            <li><a href="/demo_war_exploded/adminMilktea">Menu Milk Tea Agency 2</a></li>
+            <li><a href="/demo_war_exploded/adminMilktea2">Menu Milk Tea Agency 2</a></li>
             <li><a href="/demo_war_exploded/adminEmployee?name=agency1">Employee</a></li>
-            <li class="active"><a href="/demo_war_exploded/reportAgency1">Report Of Agency 1</a></li>
-            <li><a href="/demo_war_exploded/reportAgency2">Report Of Agency 2</a></li>
+            <li><a href="/demo_war_exploded/reportAgency1">Report Of Agency 1</a></li>
+            <li class="active"><a href="/demo_war_exploded/reportAgency2">Report Of Agency 2</a></li>
         </ul>
+        <div class="navbar-form navbar-right">
+            <a href="./logout">Log Out</a>
+        </div>
     </div>
 </nav>
 <div class="hero-image">
@@ -101,9 +104,9 @@
     </div>
 </div>
 <br>
-<form action="/reportAgency1" method="get">
+<form action="/reportAgency2" method="get">
     <div class="container">
-        <p class="fw-bolder" style="font-size:30px"><b>REPORT DAILY</b></p>
+        <p class="fw-bolder" style="font-size:30px"><b>AGENCY 2: REPORT DAILY</b></p>
         <p class="fw-bolder" style="font-size:20px"><b>SALES: <i>${moneyCoffee.total + moneyTea.total}(VND)</i></b></p>
         <div class="container">
             <div class="col-md-6">
