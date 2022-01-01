@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="css/agency.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/agency.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body, html {
@@ -80,18 +80,9 @@
             <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
             <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
             <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
-            <li><a href="/demo_war_exploded/ingredient">Ingredient</a></li>
+            <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
         </ul>
-        <form class="navbar-form navbar-right" action="searchCoffee" method="get">
-            <div class="input-group">
-                <input name="name" type="text" class="form-control" placeholder="Search here ...">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+
     </div>
 </nav>
 <div class="hero-image">
@@ -123,30 +114,111 @@
         <form action="/salesMilktea" method="get">
             <tbody>
             <c:forEach var="x" items="${listMilktea}">
-            <tr>
-                <td><img class="card-image-top img-thumbnail" src="${x.image}" alt="Card image cap" height="100"
-                         width="100"></td>
-                <td>${x.code}</td>
-                <td>${x.name}</td>
-                <td>${x.size}</td>
-                <td>${x.price}</td>
-                <td>${x.typeofTea}</td>
-                <td>${x.mlTea}</td>
-                <td>${x.condensedMilk}</td>
-                <td>${x.typeofSyrup}</td>
-                <td>${x.mlSyrup}</td>
-                <td>${x.quantity}</td>
-                <td>${x.total}</td>
-                <td>
-                    <a href="modalMilktea?sid=${x.id}">
-                        Add
-                    </a>
-                </td>
-            </tr>
+                <tr>
+                    <td><img class="card-image-top img-thumbnail" src="${x.image}" alt="Card image cap" height="100"
+                             width="100"></td>
+                    <td>${x.code}</td>
+                    <td>${x.name}</td>
+                    <td>${x.size}</td>
+                    <td>${x.price}</td>
+                    <td>${x.typeofTea}</td>
+                    <td>${x.mlTea}</td>
+                    <td>${x.condensedMilk}</td>
+                    <td>${x.typeofSyrup}</td>
+                    <td>${x.mlSyrup}</td>
+                    <td>${x.quantity}</td>
+                    <td>${x.total}</td>
+                    <td>
+                        <a href="modalMilktea?sid=${x.id}">
+                            Add
+                        </a>
+                    </td>
+                </tr>
             </c:forEach>
             </tbody>
         </form>
     </table>
+</div>
+<div class="container">
+    <br>
+    <p class="fw-bolder" style="font-size:25px">TOTAL</p>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Type Of Tea</th>
+                    <th>Amount(ML)</th>
+                </tr>
+                </thead>
+                <form action="/salesMilktea" method="get">
+                    <tbody>
+                    <c:forEach var="x" items="${getSumTea}">
+                        <tr>
+                            <td>${x.typeofTea}</td>
+                            <td>${x.totalTea}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </form>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Type Of Syrup</th>
+                    <th>Amount(ML)</th>
+                </tr>
+                </thead>
+                <form action="/salesMilktea" method="get">
+                    <tbody>
+                    <c:forEach var="x" items="${getSumSyrup}">
+                        <tr>
+                            <td>${x.typeofSyrup}</td>
+                            <td>${x.totalSyrup}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </form>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Total Condensed Milk</th>
+                </tr>
+                </thead>
+                <form action="/salesMilktea" method="get">
+                    <tbody>
+                    <tr>
+                        <td>${getSumTotal.sumMilk}</td>
+                    </tr>
+                    </tbody>
+                </form>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Total Sales</th>
+                </tr>
+                </thead>
+                <form action="/salesMilktea" method="get">
+                    <tbody>
+                    <tr>
+                        <td>${getSumTotal.sumTotal}</td>
+                    </tr>
+                    </tbody>
+                </form>
+            </table>
+        </div>
+    </div>
 </div>
 </body>
 </html>

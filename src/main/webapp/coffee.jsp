@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="css/agency.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/agency.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body, html {
@@ -81,7 +81,7 @@
             <li class="active"><a href="/demo_war_exploded/coffee">Coffee</a></li>
             <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
             <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
-            <li><a href="/demo_war_exploded/ingredient">Ingredient</a></li>
+            <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
         </ul>
         <form class="navbar-form navbar-right" action="searchCoffee" method="get">
             <div class="input-group">
@@ -103,15 +103,16 @@
 </div>
 <br>
 <div class="container-fluid" style="margin-left: 50px">
-    <div class="navbar-header">
-        <h2><b>List Of Coffee</b></h2>
+    <div class="col-sm-6">
+        <h2>List Of <b>Coffee</b></h2>
     </div>
-    <ul class="nav navbar-nav" style="margin-left: 10px">
-        <a href="addCoffee.jsp">Add New Item</a>
-    </ul>
-    <ul class="nav navbar-nav" style="margin-right: 10px">
-        <a href="/demo_war_exploded/salesCoffee">Sales</a>
-    </ul>
+    <br>
+    <div class="col-sm-6">
+        <a href="addCoffee.jsp"><i
+                class="material-icons">&#xE147;</i> <span>Add New Item</span></a>
+        <a href="/demo_war_exploded/salesCoffee"><i
+                class="material-icons">&#xE147;</i> <span>Report Sales</span></a>
+    </div>
 </div>
 <br>
 <div class="container">

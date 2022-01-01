@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="../css/agency.css" rel="stylesheet" type="text/css"/>
+    <link href="css/agency.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body, html {
@@ -78,10 +78,10 @@
             <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
-            <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
-            <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
-            <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
+            <li class="active"><a href="/demo_war_exploded/adminCoffee">Coffee</a></li>
+            <li><a href="/demo_war_exploded/adminMilktea">Milk Tea</a></li>
+            <li><a href="/demo_war_exploded/adminEmployee?name=agency1">Agency</a></li>
+            <li><a href="/demo_war_exploded/reportAgency1">Report Of Agency 1</a></li>
         </ul>
     </div>
 </nav>
@@ -93,99 +93,47 @@
 </div>
 <br>
 <div class="container-fluid" style="margin-left: 50px">
-    <div class="navbar-header">
-        <h2><b>Report Salary Of Employee</b></h2>
+    <div class="col-sm-6">
+        <h2>List Of <b>Coffee</b></h2>
     </div>
+    <br>
 </div>
+<br>
 <div class="container">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped">
+
         <thead>
         <tr>
+            <th>IMAGE</th>
             <th>CODE</th>
             <th>NAME</th>
-            <th>POSITION</th>
-            <th>PAY1H</th>
-            <th>PAYOT</th>
-            <th>WORKING HOURS</th>
-            <th>HOURS OVERTIME</th>
-            <th>SALARY</th>
-            <th>ENTER WORKING HOURS</th>
+            <th>SIZE</th>
+            <th>PRICE</th>
+            <th>COFFEE(GR)</th>
+            <th>FRESH MILK(ML)</th>
+            <th>CONDENSED MILK(ML)</th>
+            <th>SUGAR(ML)</th>
         </tr>
         </thead>
-        <tbody>
-        <c:forEach var="x" items="${list}">
-            <tr>
-                <td>${x.code}</td>
-                <td>${x.name}</td>
-                <td>${x.position}</td>
-                <td>${x.pay1h}</td>
-                <td>${x.payOT}</td>
-                <td>${x.workingHours}</td>
-                <td>${x.hoursOT}</td>
-                <td>${x.salary}</td>
-                <td>
-                    <a href="salary?sid=${x.id}">
-                        Enter
-                    </a>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
+        <form action="/adminCoffee" method="get">
+            <tbody>
+            <c:forEach var="x" items="${listCoffee}">
+                <tr>
+                    <td><img class="card-image-top img-thumbnail" src="${x.image}" alt="Card image cap" height="100"
+                             width="100"></td>
+                    <td>${x.code}</td>
+                    <td>${x.name}</td>
+                    <td>${x.size}</td>
+                    <td>${x.price}</td>
+                    <td>${x.grCoffee}</td>
+                    <td>${x.freshMilk}</td>
+                    <td>${x.condensedMilk}</td>
+                    <td>${x.sugar}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </form>
     </table>
-</div>
-<div class="container">
-    <br>
-    <p class="fw-bolder" style="font-size:25px">TOTAL</p>
-    <div class="row mt-3">
-        <div class="col-md-4">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Total Working Hours(H)</th>
-                </tr>
-                </thead>
-                <form action="/reportSalary" method="get">
-                    <tbody>
-                    <tr>
-                        <td>${sum.totalWH}</td>
-                    </tr>
-                    </tbody>
-                </form>
-            </table>
-        </div>
-        <div class="col-md-4">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Total Hours Overtime(H)</th>
-                </tr>
-                </thead>
-                <form action="/reportSalary" method="get">
-                    <tbody>
-                    <tr>
-                        <td>${sum.totalOT}</td>
-                    </tr>
-                    </tbody>
-                </form>
-            </table>
-        </div>
-        <div class="col-md-4">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Total Salary(VND)</th>
-                </tr>
-                </thead>
-                <form action="/reportSalary" method="get">
-                    <tbody>
-                    <tr>
-                        <td>${sum.total}</td>
-                    </tr>
-                    </tbody>
-                </form>
-            </table>
-        </div>
-    </div>
 </div>
 </body>
 </html>

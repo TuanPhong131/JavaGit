@@ -1,9 +1,12 @@
-package com.example.demo.dao;
+package com.example.demo.dao.agency1;
 
 import com.example.demo.connectDB.ConnectDB;
 import com.example.demo.model.SalesCoffeeModel;
 import com.example.demo.model.SalesMilkteaModel;
 import com.example.demo.model.TotalCoffeeModal;
+import com.example.demo.model.TotalMilkteaModal.TotalMilkteaModal;
+import com.example.demo.model.TotalMilkteaModal.TotalSumModal;
+import com.example.demo.model.TotalMilkteaModal.TotalSyrypModal;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -95,4 +98,49 @@ public class SalesDAO {
         return list;
     }
 
+    public List<TotalMilkteaModal> getSumTea() throws Exception{
+        List<TotalMilkteaModal> list = new ArrayList<>();
+        String sql = "SELECT typeofTea,SUM(mlTea) AS totalTea FROM salesmilktea \n" +
+                "GROUP BY typeofTea";
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    list.add(new TotalMilkteaModal(resultSet.getString("typeofTea"),
+                            resultSet.getInt("totalTea")));
+                }
+            }
+        }
+        return list;
+    }
+
+    public List<TotalSyrypModal> getSumSyrup() throws Exception{
+        List<TotalSyrypModal> list = new ArrayList<>();
+        String sql = "SELECT typeofSyrup,SUM(mlSyrup) AS totalSyrup FROM salesmilktea \n" +
+                "GROUP BY typeofSyrup";
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    list.add(new TotalSyrypModal(resultSet.getString("typeofSyrup"),
+                            resultSet.getInt("totalSyrup")));
+                }
+            }
+        }
+        return list;
+    }
+
+    public TotalSumModal getSumTotal() throws Exception{
+        String sql = "SELECT SUM(condensedMilk) AS sumMilk,SUM(total) AS sumTotal FROM salesmilktea";
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    return new TotalSumModal(resultSet.getInt("sumMilk"),
+                            resultSet.getDouble("sumTotal"));
+                }
+            }
+        }
+        return null;
+    }
 }

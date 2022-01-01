@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link href="../css/agency.css" rel="stylesheet" type="text/css"/>
+    <link href="css/agency.css" rel="stylesheet" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body, html {
@@ -90,59 +90,69 @@
 
     <div class="row">
         <div class="col-md-8">
-            <form action="salary" method="post">
+            <form action="modalMilktea" method="post">
                 <div class="p-3 py-5">
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <label for="id">ID: </label><input class="form-control" type="text" name="id" id="id"
-                                                               value="${modal.id}"
+                                                               value="${modalMilktea.id}"
                                                                readonly></div>
                         <div class="col-md-6">
                             <label for="name">NAME: </label><input class="form-control" type="text"
                                                                    name="name" id="name"
-                                                                   value="${modal.name}"
+                                                                   value="${modalMilktea.name}"
                                                                    readonly></div>
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-6">
-                            <label for="code">CODE: </label><input class="form-control" type="text" name="code"
-                                                                   id="code"
-                                                                   value="${modal.code}"
-                                                                   readonly/></div>
+                            <label for="price">PRICE: </label><input class="form-control" type="text" name="price"
+                                                                     id="price"
+                                                                     value="${modalMilktea.price}"
+                                                                     readonly/></div>
                         <div class="col-md-6">
-                            <label for="position">POSITION: </label><input class="form-control" type="text"
-                                                                           name="position"
-                                                                           id="position"
-                                                                           value="${modal.position}"
-                                                                           readonly/></div>
+                            <label for="typeofTea">typeofTea: </label><input class="form-control" type="text"
+                                                                             name="typeofTea"
+                                                                             id="typeofTea"
+                                                                             value="${modalMilktea.typeofTea}"
+                                                                             readonly/></div>
                     </div>
                     <div class="row mt-3">
 
                         <div class="col-md-6">
-                            <label for="pay1h">PAY PER HOUR: </label><input class="form-control" type="text"
-                                                                            name="pay1h"
-                                                                            id="pay1h"
-                                                                            value="${modal.pay1h}"
-                                                                            readonly/></div>
-                        <div class="col-md-6"><label for="salary">SALARY: </label><input
+                            <label for="mlTea">mlTea(ML): </label><input class="form-control" type="text"
+                                                                                  name="mlTea"
+                                                                                  id="mlTea"
+                                                                                  value="${modalMilktea.mlTea}"
+                                                                                  readonly/></div>
+                        <div class="col-md-6"><label for="condensedMilk">CONDENSED MILK(ML): </label><input
                                 class="form-control" type="text"
-                                name="salary"
-                                id="salary"
-                                value="${modal.salary}"
+                                name="condensedMilk"
+                                id="condensedMilk"
+                                value="${modalMilktea.condensedMilk}"
                                 readonly/></div>
                     </div>
+
                     <div class="row mt-3">
-                        <div class="col-md-6"><label for="hoursOT">ENTER HOURS OVERTIME: </label><input
-                                class="form-control" type="text"
-                                name="hoursOT"
-                                id="hoursOT"
-                                required/></div>
-                        <div class="col-md-6"><label for="workingHours">ENTER WORKING HOURS: </label><input type="text" name="workingHours"
-                                                                                             id="workingHours"
+
+                        <div class="col-md-6">
+                            <label for="typeofSyrup">typeofSyrup: </label><input class="form-control" type="text" name="typeofSyrup"
+                                                                     id="typeofSyrup"
+                                                                     value="${modalMilktea.typeofSyrup}"
+                                                                     readonly/></div>
+                        <div class="col-md-6">
+                            <label for="mlSyrup">mlSyrup: </label><input class="form-control" type="text" name="mlSyrup"
+                                                                                 id="mlSyrup"
+                                                                                 value="${modalMilktea.mlSyrup}"
+                                                                                 readonly/></div>
+
+                        <div class="col-md-6"><label for="quantity">QUANTITY: </label><input type="text" name="quantity"
+                                                                                             id="quantity"
                                                                                              class="form-control" required/>
                         </div>
                     </div>
+
                     <br>
+
                     <button type="submit" class="btn btn-primary">
                         Save changes
                     </button>
