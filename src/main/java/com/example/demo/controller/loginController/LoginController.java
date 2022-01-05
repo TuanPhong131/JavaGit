@@ -40,7 +40,7 @@ public class LoginController extends HttpServlet {
                 resp.sendRedirect("coffee2");
             }
             else{
-                resp.sendRedirect("login");
+                resp.sendRedirect("login.jsp");
             }
         }
         catch (Exception e){

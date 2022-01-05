@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.6.4-MariaDB - mariadb.org binary distribution
+-- Server version:               10.6.5-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
 -- HeidiSQL Version:             11.3.0.6295
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 -- Dumping data for table dulieuquanlifb.account: ~3 rows (approximately)
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
 INSERT INTO `account` (`username`, `password`, `role`) VALUES
-	('phong', '123', 'admin'),
+	('admin', '123', 'admin'),
 	('agency1', '123', 'agency1'),
 	('agency2', '123', 'agency2');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `coffee` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dulieuquanlifb.coffee: ~9 rows (approximately)
+-- Dumping data for table dulieuquanlifb.coffee: ~8 rows (approximately)
 /*!40000 ALTER TABLE `coffee` DISABLE KEYS */;
 INSERT INTO `coffee` (`id`, `code`, `image`, `name`, `size`, `price`, `grCoffee`, `freshMilk`, `condensedMilk`, `sugar`) VALUES
 	(1, 'C01', 'https://benefitsuses.com/wp-content/uploads/2020/05/istock-157528129.jpg\r\n', 'Black Coffee\r\n', 'S', 35000, 18, 0, 0, 10),
@@ -159,19 +159,19 @@ CREATE TABLE IF NOT EXISTS `milktea` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table dulieuquanlifb.milktea: ~11 rows (approximately)
+-- Dumping data for table dulieuquanlifb.milktea: ~10 rows (approximately)
 /*!40000 ALTER TABLE `milktea` DISABLE KEYS */;
 INSERT INTO `milktea` (`id`, `code`, `image`, `name`, `size`, `price`, `typeofTea`, `mlTea`, `condensedMilk`, `typeofSyrup`, `mlSyrup`) VALUES
 	(3, 'M01', 'https://chinmilktea.vn/public/upload/images/hinhsanpham/tra-sua-dau-tay-58891616125982.JPG\r\n', 'Caramel Milk Tea\r\n', 'S', 42000, 'Green Tea ', 80, 30, 'Caramel', 10),
 	(4, 'M02', 'https://chinmilktea.vn/public/upload/images/hinhsanpham/tra-sua-dau-tay-58891616125982.JPG\r\n', 'Caramel Milk Tea\r\n', 'M', 52000, 'Green Tea ', 120, 40, 'Caramel', 20),
 	(5, 'M03', 'https://i.ytimg.com/vi/bsZAIV9o1UE/maxresdefault.jpg\r\n', 'Matcha Latte\r\n', 'S', 45000, 'Green Tea', 80, 40, 'Matcha', 10),
 	(6, 'M04', 'https://i.ytimg.com/vi/bsZAIV9o1UE/maxresdefault.jpg\r\n', 'Matcha Latte\r\n', 'M', 55000, 'Green Tea', 120, 50, 'Matcha', 20),
-	(7, 'M05', 'https://cachlambep.net/wp-content/uploads/2020/12/cach-lam-tra-sua-dai-loan.jpg\r\n', 'Almond Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Almond', 10),
-	(8, 'M06', 'https://cachlambep.net/wp-content/uploads/2020/12/cach-lam-tra-sua-dai-loan.jpg\r\n', 'Almond Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Almond', 20),
+	(7, 'M05', 'https://i5.chefiso.com/srv/images/coffee-jelly-drink-600x400.jpg', 'Almond Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Almond', 10),
+	(8, 'M06', 'https://i5.chefiso.com/srv/images/coffee-jelly-drink-600x400.jpg', 'Almond Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Almond', 20),
 	(9, 'M07', 'https://www.bartender.edu.vn/wp-content/uploads/2020/04/tra-sua-socola.jpg\r\n', 'Chocolate Milk Tea\r\n', 'S', 45000, 'Green Tea', 80, 40, 'Chocolate', 10),
 	(10, 'M08', 'https://www.bartender.edu.vn/wp-content/uploads/2020/04/tra-sua-socola.jpg\r\n', 'Chocolate Milk Tea\r\n', 'M', 55000, 'Green Tea', 120, 50, 'Chocolate', 20),
-	(11, 'M09', 'http://giaykiyomi.net/wp-content/uploads/2016/03/cach-lam-tra-sua-dau-tay-hat-tran-chau-thom-ngon-mat-lanh-giai-nhiet-ngay-he-5.jpg\r\n', 'Strawberry Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Strawberry', 10),
-	(12, 'M10', 'http://giaykiyomi.net/wp-content/uploads/2016/03/cach-lam-tra-sua-dau-tay-hat-tran-chau-thom-ngon-mat-lanh-giai-nhiet-ngay-he-5.jpg\r\n', 'Strawberry Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Strawberry', 20);
+	(11, 'M09', 'https://thumbs.dreamstime.com/b/homemade-strawberry-milk-bubble-tea-tapioca-173911118.jpg', 'Strawberry Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Strawberry', 10),
+	(12, 'M10', 'https://thumbs.dreamstime.com/b/homemade-strawberry-milk-bubble-tea-tapioca-173911118.jpg', 'Strawberry Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Strawberry', 20);
 /*!40000 ALTER TABLE `milktea` ENABLE KEYS */;
 
 -- Dumping structure for table dulieuquanlifb.milktea2
@@ -197,12 +197,12 @@ INSERT INTO `milktea2` (`id`, `code`, `image`, `name`, `size`, `price`, `typeofT
 	(4, 'M02', 'https://chinmilktea.vn/public/upload/images/hinhsanpham/tra-sua-dau-tay-58891616125982.JPG\r\n', 'Caramel Milk Tea\r\n', 'M', 52000, 'Green Tea ', 120, 40, 'Caramel', 20),
 	(5, 'M03', 'https://i.ytimg.com/vi/bsZAIV9o1UE/maxresdefault.jpg\r\n', 'Matcha Latte\r\n', 'S', 45000, 'Green Tea', 80, 40, 'Matcha', 10),
 	(6, 'M04', 'https://i.ytimg.com/vi/bsZAIV9o1UE/maxresdefault.jpg\r\n', 'Matcha Latte\r\n', 'M', 55000, 'Green Tea', 120, 50, 'Matcha', 20),
-	(7, 'M05', 'https://cachlambep.net/wp-content/uploads/2020/12/cach-lam-tra-sua-dai-loan.jpg\r\n', 'Almond Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Almond', 10),
-	(8, 'M06', 'https://cachlambep.net/wp-content/uploads/2020/12/cach-lam-tra-sua-dai-loan.jpg\r\n', 'Almond Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Almond', 20),
+	(7, 'M05', 'https://yummynotes.net/wp-content/uploads/2021/08/Homemade-Coffee-Jelly-Recipe.jpg', 'Almond Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Almond', 10),
+	(8, 'M06', 'https://yummynotes.net/wp-content/uploads/2021/08/Homemade-Coffee-Jelly-Recipe.jpg', 'Almond Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Almond', 20),
 	(9, 'M07', 'https://www.bartender.edu.vn/wp-content/uploads/2020/04/tra-sua-socola.jpg\r\n', 'Chocolate Milk Tea\r\n', 'S', 45000, 'Green Tea', 80, 40, 'Chocolate', 10),
 	(10, 'M08', 'https://www.bartender.edu.vn/wp-content/uploads/2020/04/tra-sua-socola.jpg\r\n', 'Chocolate Milk Tea\r\n', 'M', 55000, 'Green Tea', 120, 50, 'Chocolate', 20),
-	(11, 'M09', 'http://giaykiyomi.net/wp-content/uploads/2016/03/cach-lam-tra-sua-dau-tay-hat-tran-chau-thom-ngon-mat-lanh-giai-nhiet-ngay-he-5.jpg\r\n', 'Strawberry Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Strawberry', 10),
-	(12, 'M10', 'http://giaykiyomi.net/wp-content/uploads/2016/03/cach-lam-tra-sua-dau-tay-hat-tran-chau-thom-ngon-mat-lanh-giai-nhiet-ngay-he-5.jpg\r\n', 'Strawberry Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Strawberry', 20);
+	(11, 'M09', 'https://shottbeverages.com/wp-content/uploads/2020/08/strawbeery_bubble-tea.jpg', 'Strawberry Milk Tea\r\n', 'S', 42000, 'Oolong Tea', 80, 30, 'Strawberry', 10),
+	(12, 'M10', 'https://shottbeverages.com/wp-content/uploads/2020/08/strawbeery_bubble-tea.jpg', 'Strawberry Milk Tea\r\n', 'M', 52000, 'Oolong Tea', 120, 40, 'Strawberry', 20);
 /*!40000 ALTER TABLE `milktea2` ENABLE KEYS */;
 
 -- Dumping structure for table dulieuquanlifb.salescoffee
