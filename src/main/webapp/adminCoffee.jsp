@@ -111,13 +111,12 @@
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="/demo_war_exploded/adminMilktea">Menu Milk Tea Agency 1</a></li>
-                    <li><a href="/demo_war_exploded/adminMilktea">Menu Milk Tea Agency 2</a></li>
+                    <li><a href="/demo_war_exploded/adminMilktea2">Menu Milk Tea Agency 2</a></li>
                     <li><a href="/demo_war_exploded/adminEmployee?name=agency1">Employee</a></li>
                     <li><a href="/demo_war_exploded/reportAgency1">Report Of Agency 1</a></li>
                     <li><a href="/demo_war_exploded/reportAgency2">Report Of Agency 2</a></li>
                 </ul>
             </li>
-
         </ul>
         <div class="navbar-form navbar-right">
             <a href="./logout">Log Out</a>

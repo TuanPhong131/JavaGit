@@ -97,13 +97,13 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
+            <a class="navbar-brand" href="/demo_war_exploded/homeA2.jsp">HOME</a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="/demo_war_exploded/coffee2">Coffee</a></li>
             <li><a href="/demo_war_exploded/milktea2">Milk Tea</a></li>
             <li><a href="/demo_war_exploded/agency2?name=agency2">Agency</a></li>
-            <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
+            <li><a href="/demo_war_exploded/total2">Total Report Daily</a></li>
         </ul>
         <div class="navbar-form navbar-right">
             <a href="./logout">Log Out</a>

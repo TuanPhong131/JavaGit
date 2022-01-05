@@ -155,64 +155,23 @@
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-
-<%--<nav class="navbar navbar-default navbar-fixed-top">--%>
-<%--    <div class="container-fluid">--%>
-<%--        <div class="navbar-header">--%>
-<%--            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">--%>
-<%--                <span class="icon-bar"></span>--%>
-<%--                <span class="icon-bar"></span>--%>
-<%--                <span class="icon-bar"></span>--%>
-<%--            </button>--%>
-<%--            <img class="img-circle" src="https://static.vecteezy.com/system/resources/thumbnails/000/183/257/small/Coffee_Shop_Logo.jpg" height="60" width="60"></img>--%>
-<%--        </div>--%>
-<%--        <div class="collapse navbar-collapse" id="myNavbar">--%>
-<%--            <ul class="nav navbar-nav navbar-left">--%>
-<%--                <li><a href="/demo_war_exploded/home.jsp">HOME</a></li>--%>
-<%--                <li><a href="/demo_war_exploded/coffee">COFFEE</a></li>--%>
-<%--                <li><a href="/demo_war_exploded/milktea">MILKTEA</a></li>--%>
-<%--                <li class="dropdown">--%>
-<%--                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE--%>
-<%--                        <span class="caret"></span></a>--%>
-<%--                    <ul class="dropdown-menu">--%>
-<%--                        <li><a href="#">Merchandise</a></li>--%>
-<%--                        <li><a href="#">Extras</a></li>--%>
-<%--                        <li><a href="#">Media</a></li>--%>
-<%--                    </ul>--%>
-<%--                </li>--%>
-<%--                <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>--%>
-<%--            </ul>--%>
-<%--            <div class="navbar-form navbar-right">--%>
-<%--                <a href="./logout">Log Out</a>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</nav>--%>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <li class="active"><a class="navbar-brand" href="/demo_war_exploded/home.jsp">HOME</a></li>
+            <li class="active"><a class="navbar-brand" href="/demo_war_exploded/homeA1.jsp">HOME</a></li>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="/demo_war_exploded/adminCoffee">Menu Coffee Agency 1</a></li>
-            <li><a href="/demo_war_exploded/adminCoffee2">Menu Coffee Agency 2</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="/demo_war_exploded/adminMilktea">Menu Milk Tea Agency 1</a></li>
-                    <li><a href="/demo_war_exploded/adminMilktea2">Menu Milk Tea Agency 2</a></li>
-                    <li><a href="/demo_war_exploded/adminEmployee?name=agency1">Employee</a></li>
-                    <li><a href="/demo_war_exploded/reportAgency1">Report Of Agency 1</a></li>
-                    <li><a href="/demo_war_exploded/reportAgency2">Report Of Agency 2</a></li>
-                </ul>
-            </li>
+            <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
+            <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
+            <li><a href="/demo_war_exploded/agency?name=agency1">Agency</a></li>
+            <li><a href="/demo_war_exploded/total">Total Report Daily</a></li>
         </ul>
         <div class="navbar-form navbar-right">
             <a href="./logout">Log Out</a>
         </div>
     </div>
 </nav>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -452,6 +411,5 @@
         });
     })
 </script>
-
 </body>
 </html>

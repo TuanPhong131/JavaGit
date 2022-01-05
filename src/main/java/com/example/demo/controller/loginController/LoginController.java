@@ -31,16 +31,13 @@ public class LoginController extends HttpServlet {
             String password = req.getParameter("password");
             LoginModel check = loginDAO.checkLogin(username,password);
             if(Objects.equals(check.getRole(), "admin")){
-                resp.sendRedirect("adminCoffee");
+                resp.sendRedirect("home.jsp");
             }
             else if(Objects.equals(check.getRole(),"agency1")){
-                resp.sendRedirect("coffee");
+                resp.sendRedirect("homeA1.jsp");
             }
             else if(Objects.equals(check.getRole(),"agency2")){
-                resp.sendRedirect("coffee2");
-            }
-            else{
-                resp.sendRedirect("login.jsp");
+                resp.sendRedirect("homeA2.jsp");
             }
         }
         catch (Exception e){
